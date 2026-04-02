@@ -679,6 +679,49 @@
     footer { flex-direction: column; text-align: center; }
     .work-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── WHATSAPP FLOATING BUTTON ── */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px 12px 14px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35), 0 2px 8px rgba(0,0,0,0.3);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45), 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .wa-float svg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+  .wa-label { white-space: nowrap; }
+  @media (max-width: 900px) {
+    .wa-float {
+      bottom: 20px;
+      right: 20px;
+      padding: 13px;
+      border-radius: 50%;
+    }
+    .wa-label { display: none; }
+    .wa-float svg { width: 28px; height: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -1106,6 +1149,21 @@ document.querySelectorAll('.service-card, .work-card, .why-item, .contact-row').
   observer.observe(el);
 });
 </script>
+
+<!-- ── WHATSAPP FLOATING BUTTON ── -->
+<a
+  class="wa-float"
+  href="https://wa.me/447718155997?text=Hi%2C%20I%20found%20your%20website%20and%20would%20like%20a%20quote."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with us on WhatsApp"
+>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.028 7.77L0 32l8.437-2.009A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.766-1.849l-.485-.289-5.008 1.193 1.234-4.875-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.878c-.398-.199-2.354-1.162-2.718-1.294-.364-.133-.629-.199-.894.199-.265.398-1.028 1.294-1.26 1.56-.232.265-.464.298-.862.1-.398-.199-1.681-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.614.174-.812.179-.178.398-.464.597-.696.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.696-.1-.199-.894-2.155-1.226-2.95-.322-.774-.65-.669-.894-.681l-.762-.013c-.265 0-.696.1-1.061.497-.364.398-1.393 1.361-1.393 3.317s1.426 3.847 1.625 4.112c.199.265 2.806 4.285 6.799 6.01.951.41 1.693.655 2.271.839.954.304 1.823.261 2.509.158.766-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.099-.166-.364-.265-.762-.464z" fill="#fff"/>
+  </svg>
+  <span class="wa-label">WhatsApp Us</span>
+</a>
+
 <script src='https://cdn.jotfor.ms/agent/embedjs/019d319c5c4c7c629b66fffece5e1ef998ef/embed.js'></script>
 </body>
 </html>
